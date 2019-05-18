@@ -53,7 +53,8 @@ namespace EfCoreInAction
                 }
             }
 
-            services.AddDbContext<EfCoreContext>(options => options.UseSqlServer(connection,
+            services.AddEntityFrameworkNpgsql();
+            services.AddDbContext<EfCoreContext>(options => options.UseNpgsql(connection,
                 b => b.MigrationsAssembly("DataLayer")));
 
             //Add AutoFac
